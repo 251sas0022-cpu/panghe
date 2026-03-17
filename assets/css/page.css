@@ -1,0 +1,83 @@
+/* =========================================
+   HERITAGE DETAIL PAGE CONTAINER
+   -----------------------------------------
+   Main wrapper for a single heritage item
+   - Centers content horizontally
+   - Provides vertical spacing and padding
+   - Uses flex column layout for stacking elements
+========================================= */
+.heritage-detail {
+  max-width: 900px;       
+  margin: 2rem auto;      
+  padding: 0 1rem;        
+  display: flex;
+  flex-direction: column; 
+  gap: 2rem;              
+}
+
+/* =========================================
+   HERITAGE IMAGE
+   -----------------------------------------
+   Main image for the heritage item
+   - Full width with max height limit
+   - Rounded corners for visual style
+   - Object-fit cover ensures image covers container
+========================================= */
+.heritage-image {
+  width: 100%;             
+  max-height: 500px;       
+  border-radius: 1rem;     
+  object-fit: cover;       
+}
+
+/* =========================================
+   HERITAGE TITLE
+   -----------------------------------------
+   Main heading for the heritage item
+   - Larger font for prominence
+   - Spacing below title for separation
+========================================= */
+.heritage-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   HERITAGE META (LOCATION & CATEGORY)
+   -----------------------------------------
+   Subheadings providing metadata about the heritage item
+   - Slightly muted color for secondary info
+   - Medium font weight for readability
+   - Spacing below each line
+========================================= */
+.heritage-location,
+.heritage-category {
+  color: #555;            
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   HERITAGE DESCRIPTION
+   -----------------------------------------
+   Paragraph describing the heritage item
+   - Comfortable line height for readability
+   - Slightly larger font for body text
+========================================= */
+.heritage-description {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   HERITAGE NOT FOUND
+   -----------------------------------------
+   Displayed when a heritage item cannot be found
+   - Centered text with padding
+   - Muted color for secondary emphasis
+========================================= */
+.heritage-notfound {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #888;             
+}

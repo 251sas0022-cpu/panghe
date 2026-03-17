@@ -1,0 +1,179 @@
+/* =========================================
+   PAGE CONTAINER
+   -----------------------------------------
+   Wrapper for the entire page content
+   - Centers content horizontally
+   - Provides vertical spacing
+   - Uses flex column layout for stacked sections
+========================================= */
+.page {
+  max-width: 1200px;          
+  margin: 4rem auto;          
+  padding: 0 var(--space-lg); 
+  display: flex;
+  flex-direction: column;     
+  gap: 3rem;        
+  container-type: inline-size;
+  container-name: page;          
+}
+
+/* =========================================
+   HEADER CONTAINER
+   -----------------------------------------
+   Wrapper for page header area
+   - Soft background for separation
+   - Rounded corners and shadow for card-like appearance
+========================================= */
+.header-container {
+  background: #f4f1ea;             
+  padding: var(--space-md) var(--space-lg); 
+  border-radius: var(--radius-lg);  
+  box-shadow: var(--shadow-sm);    
+}
+
+/* =========================================
+   HERO SECTION
+   -----------------------------------------
+   Prominent top section with solid green background
+   - Rounded edges and shadow for visual depth
+   - Overflow hidden to contain inner elements
+========================================= */
+.hero {
+  position: relative;
+  border-radius: 2rem;          
+  box-shadow: var(--shadow-lg); 
+  overflow: hidden;            
+
+  /* Background image */
+  background-image: url('/images/background.jpg');
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat; 
+  color: white;                  
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 0;
+}
+
+.hero-inner, .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero inner wrapper */
+.hero-inner {
+  min-height: 420px;               
+  padding: 4rem var(--space-lg);   
+  display: flex;
+  align-items: center;             
+  justify-content: center;         
+  text-align: center;              
+}
+
+/* Hero content container */
+.hero-content {
+  max-width: 680px;                
+  display: flex;
+  flex-direction: column;          
+  align-items: center;
+  gap: 1.25rem;                    
+}
+
+/* Hero title */
+.hero-title {
+  font-size: clamp(2.4rem, 4vw, 3.2rem); 
+  font-weight: 800;                      
+  line-height: 1.15;                    
+  color: #ffffff;                        
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;                       
+  color: rgba(255, 255, 255, 0.9);        
+}
+
+/* =========================================
+   SEARCH CARD
+   -----------------------------------------
+   Search input container with soft green glass effect
+   - Rounded corners and shadow for card effect
+   - Semi-transparent background for visual layering
+========================================= */
+.search-card {
+  margin-top: 1.75rem;                  
+  padding: 1rem;                        
+  border-radius: 1.5rem;                
+  width: 100%;
+  max-width: 520px;                      
+  background-color: rgba(230, 242, 230, 0.9); 
+  border: 1px solid rgba(76, 175, 80, 0.5);   
+  box-shadow: var(--shadow-md);         
+}
+
+/* =========================================
+   HERITAGE SECTION
+   -----------------------------------------
+   Container for heritage content/cards
+   - Vertical stacking of elements with spacing
+   - Rounded corners and optional background
+========================================= */
+.heritage-section {
+  display: flex;
+  flex-direction: column;          
+  gap: 2rem;                       
+  padding: var(--space-lg);        
+  padding-bottom: 3rem;            
+  background-color: #f0f4f000;     
+  border-radius: var(--radius-lg); 
+}
+
+/* Individual heritage cards inside grid */
+.heritage-grid ::v-deep(.heritage-card) {
+  background-color: #ffffff;          
+  border-radius: var(--radius-md);    
+  box-shadow: var(--shadow-sm);       
+  transition: transform 0.25s ease, box-shadow 0.25s ease; 
+}
+
+/* Hover effect for heritage cards */
+.heritage-grid ::v-deep(.heritage-card:hover) {
+  transform: translateY(-6px);        
+  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.15); 
+}
+
+/* Carousel title styling */
+.carousel-title {
+  font-size: 2rem;             
+  font-weight: 700;            
+  color: var(--primary-dark);  
+  margin-bottom: 1rem;         
+}
+
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+   -----------------------------------------
+   Adjust hero layout and text for screens ≤768px
+========================================= */
+@container page (max-width: 768px) {
+  .hero-inner {
+    padding: 3rem 1.5rem;      
+  }
+
+  .hero-title {
+    font-size: 2.2rem;        
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;          
+  }
+}

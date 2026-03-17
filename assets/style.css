@@ -1,0 +1,129 @@
+/* =========================================
+   GLOBAL DESIGN SYSTEM - EARTHY THEME
+   -----------------------------------------
+   Define color palette, spacing, typography, border radius, and shadows
+   - Uses CSS custom properties for consistent theming
+   - Enables responsive, fluid design with clamp()
+========================================= */
+:root {
+  /* ===== COLORS ===== */
+  --primary: #4caf50;        /* fresh green for buttons, highlights */
+  --primary-dark: #388e3c;   /* darker green for hover states, accents */
+  --secondary: #8d6e63;      /* earthy brown for secondary elements */
+  --text-dark: #2e2e2e;      /* primary text color, dark charcoal */
+  --text-light: #6b6b6b;     /* secondary text, medium gray */
+  --bg-light: #f4f1ea;       /* background for sections and body */
+  --white: #ffffff;           /* pure white for contrast and cards */
+
+  /* ===== FLUID SPACING =====
+     Using clamp(min, preferred, max) for responsive spacing
+  ================================= */
+  --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --space-sm: clamp(0.75rem, 0.6rem + 0.8vw, 1rem);
+  --space-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  --space-xl: clamp(2rem, 1.5rem + 3vw, 4rem);
+
+  /* ===== FLUID TYPOGRAPHY =====
+     Responsive font sizes using clamp
+  ================================= */
+  --text-sm: clamp(0.85rem, 0.8rem + 0.3vw, 0.95rem);
+  --text-base: clamp(1rem, 0.95rem + 0.5vw, 1.1rem);
+  --text-lg: clamp(1.3rem, 1rem + 1vw, 1.6rem);
+  --text-xl: clamp(1.8rem, 1.2rem + 2vw, 2.5rem);
+  --text-hero: clamp(2.2rem, 1.5rem + 3vw, 3.5rem); 
+
+  /* ===== BORDER RADIUS ===== */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* ===== SHADOWS =====
+     Subtle to strong for layering and depth
+  ================================= */
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   GLOBAL RESET
+   -----------------------------------------
+   Normalize styles across browsers
+   - box-sizing, margins, font smoothing, scroll behavior
+========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;  
+}
+
+html {
+  margin: 0;
+  font-size: 16px;          
+  scroll-behavior: smooth;  
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; 
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; 
+}
+
+/* Remove default margins for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* =========================================
+   IMAGES
+   -----------------------------------------
+   Responsive images with rounded corners
+========================================= */
+img {
+  max-width: 100%;        
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* =========================================
+   LINKS
+   -----------------------------------------
+   Default link color with hover effect
+========================================= */
+a {
+  text-decoration: none;
+  color: var(--primary-dark);  
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary);       
+}
+
+/* =========================================
+   BUTTONS (Global Style)
+   -----------------------------------------
+   Optional base button style for consistency
+   - Uses primary color and shadow
+   - Hover effect darkens background and increases shadow
+========================================= */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-lg);
+}

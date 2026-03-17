@@ -1,0 +1,188 @@
+/* =========================================
+   RESET & BASE STYLES
+   -----------------------------------------
+   Establish consistent baseline for all elements
+   - Remove default margin/padding
+   - Apply border-box for all elements
+========================================= */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+header, .header-nav {
+  margin: 0;
+  padding: 0;
+  width: 100%;         
+}
+
+/* =========================================
+   HERITAGE LIST WRAPPER
+   -----------------------------------------
+   Main container for the heritage section
+   - Centers content and stacks vertically
+   - Provides background and spacing
+========================================= */
+.heritage-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 3rem;              
+  background: var(--bg-light);         
+  padding: 7rem 1.5rem 5rem 1.5rem;   
+}
+
+/* =========================================
+   INNER CONTAINER
+   -----------------------------------------
+   Constrains content width for readability
+   - Centers content vertically & horizontally
+   - Applies text alignment for headings/descriptions
+========================================= */
+.heritage-inner {
+  max-width: 900px;        
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;               
+  align-items: center;     
+  justify-content: center; 
+  text-align: center;      
+}
+
+/* =========================================
+   HERITAGE GRID
+   -----------------------------------------
+   Grid layout for heritage cards
+   - Responsive columns with min-width 280px
+   - Gap between cards
+   - Centered within page
+========================================= */
+.heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg, 2rem); 
+  width: 100%;
+  max-width: 1400px;          
+  padding: var(--space-lg, 2rem);
+  margin: 0 auto;              
+}
+
+/* =========================================
+   HERITAGE CARD
+   -----------------------------------------
+   Individual card styling
+   - Glass-like semi-transparent background
+   - Rounded corners, shadow, hover/active effects
+   - Flex layout for content
+========================================= */
+.heritage-grid ::v-deep(.heritage-card) {
+  border-radius: 1.5rem;  
+  overflow: hidden;        
+  cursor: pointer;         
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)); 
+  backdrop-filter: blur(12px);     
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;  
+  height: 100%;
+}
+
+/* Hover & active states for interactive feedback */
+.heritage-grid ::v-deep(.heritage-card:hover) {
+  transform: translateY(-8px);        
+  box-shadow: 0 18px 35px rgba(0,0,0,0.15); 
+}
+.heritage-grid ::v-deep(.heritage-card:active) {
+  transform: scale(0.98);            
+}
+
+/* =========================================
+   CARD IMAGE
+   -----------------------------------------
+   Image at top of card
+   - Covers card width
+   - Maintains 16:9 aspect ratio
+   - Rounded top corners
+   - Scales slightly on hover
+========================================= */
+.heritage-grid ::v-deep(.heritage-card img) {
+  width: 100%;
+  aspect-ratio: 16 / 9;               
+  object-fit: cover;                  
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  transition: transform 0.3s ease;     
+}
+.heritage-grid ::v-deep(.heritage-card:hover img) {
+  transform: scale(1.05);             
+}
+
+/* =========================================
+   CARD CONTENT
+   -----------------------------------------
+   Container for title and description
+   - Padding and flex column layout
+========================================= */
+.heritage-grid ::v-deep(.heritage-card .card-content) {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1; 
+}
+
+.heritage-grid ::v-deep(.heritage-card .card-title) {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.heritage-grid ::v-deep(.heritage-card .card-description) {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+/* =========================================
+   CONTAINER QUERY: CARD LAYOUT
+   -----------------------------------------
+   Adjust card layout on wider containers
+   - Switch to horizontal card layout
+   - Resize image to 40% width
+   - Add padding for content
+========================================= */
+@container (min-width: 500px) {
+  .heritage-grid ::v-deep(.heritage-card) {
+    flex-direction: row; 
+  }
+  .heritage-grid ::v-deep(.heritage-card img) {
+    width: 40%;          
+    height: auto;
+    aspect-ratio: auto;
+    border-radius: 0;     
+  }
+  .heritage-grid ::v-deep(.heritage-card .card-content) {
+    padding: 1.5rem;
+  }
+}
+
+/* =========================================
+   MOBILE ADJUSTMENTS
+   -----------------------------------------
+   Reduce padding for smaller screens
+========================================= */
+@container page (max-width: 768px) {
+  .heritage-list {
+    padding: 3rem 1rem 3rem 1rem; 
+  }
+}

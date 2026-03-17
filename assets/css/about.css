@@ -1,0 +1,148 @@
+/* =========================================
+   About Section Wrapper
+   -----------------------------------------
+   Container for the "About Heritage" section
+   - Uses flex layout for vertical stacking
+   - Responsive padding using clamp
+   - Centers content horizontally
+   ========================================= */
+.about-heritage {
+  margin-top: -2rem; 
+  flex: 1;            
+  width: 100%;        
+  padding: clamp(2rem, 5vw, 6rem) clamp(1.5rem, 6vw, 8rem);
+  display: flex;
+  flex-direction: column; 
+  gap: 2rem;              
+  text-align: center;     
+}
+
+/* =========================================
+   Header with Icon
+   -----------------------------------------
+   Flex container for the section title and icon
+   - Horizontally aligns icon & heading
+   - Baseline alignment for text/icon alignment
+   ========================================= */
+.about-header {
+  display: flex;
+  justify-content: center; 
+  gap: 0.75rem;            
+  align-items: baseline;    
+}
+
+/* =========================================
+   Section Heading
+   -----------------------------------------
+   Styles for the heading text of the about section
+   - Removes default margin
+   - Responsive font sizing
+   - High contrast for readability
+   ========================================= */
+.about-title {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.5rem); 
+  font-weight: 800;                     
+  line-height: 1.2;                     
+  color: #2e4d2e;                       
+}
+
+/* =========================================
+   Icon Next to Heading
+   -----------------------------------------
+   Styles for icon appearing next to heading
+   - Matches heading height
+   - Uses theme color
+   - Baseline alignment ensures visual harmony
+   ========================================= */
+.title-icon {
+  font-size: 1.5em;         
+  color: var(--primary-color); 
+  align-self: baseline;     
+}
+
+/* =========================================
+   Paragraph Text
+   -----------------------------------------
+   Styles for descriptive text in about section
+   - Centers paragraph
+   - Limits maximum width for readability
+   - Responsive font size
+   ========================================= */
+.about-text {
+  max-width: 800px;           
+  margin: 0 auto;             
+  font-size: clamp(1rem, 1.2vw, 1.125rem); 
+  color: #4d6b4d;           
+  line-height: 1.6;            
+}
+
+/* =========================================
+   Feature Grid
+   -----------------------------------------
+   Grid layout for feature cards in the about section
+   - Responsive: adapts to available space
+   - Minimum column width ensures cards stay readable
+   - Gap defines space between cards
+   ========================================= */
+.heritage-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive columns */
+  gap: 2rem;  
+  width: 100%;
+}
+
+/* =========================================
+   Feature Card
+   -----------------------------------------
+   Individual card styling for features
+   - White background with rounded corners
+   - Slight shadow for elevation
+   - Smooth hover effect for interactivity
+   ========================================= */
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px; 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); 
+  text-align: center;
+  transition: transform 0.2s ease; 
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); 
+}
+
+.feature-icon {
+  font-size: 32px;               
+  margin-bottom: 1rem;           
+  color: var(--primary-color);   
+}
+
+.feature-card h3 {
+  margin-bottom: 0.75rem;        
+}
+
+.feature-card p {
+  color: #666;                   
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* =========================================
+   Responsive Adjustments
+   -----------------------------------------
+   Adjusts layout for smaller screens (≤768px)
+   - Stacks heading and icon vertically
+   - Increases icon size for better visibility
+   ========================================= */
+@container page (max-width: 768px) {
+  .about-header {
+    flex-direction: column;  
+    gap: 0.5rem;             
+  }
+
+  .title-icon {
+    font-size: 2rem;         
+  }
+}
