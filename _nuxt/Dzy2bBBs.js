@@ -1,0 +1,1 @@
+import{_ as a,o,c as t,x as n,z as c}from"./DkPgE079.js";const r={__name:"BaseHeading",props:{customClass:String},setup(s){return(e,l)=>(o(),t("h1",{class:c(["base-heading",s.customClass])},[n(e.$slots,"default",{},void 0)],2))}},_=a(r,[["__scopeId","data-v-dc54282b"]]);export{_ as B};
