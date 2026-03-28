@@ -23,7 +23,7 @@ const props = defineProps({
 // Heritage sites dataset
 const sites = [
   { image: "/images/hundredIslands.jpg", title: "Hundred Islands National Park", location: "Alaminos, Pangasinan", category: "Natural Heritage" },
-  { image: "/images/capeBolinao.jpg", title: "Cape Bolinao", location: "Bolinao, Pangasinan", category: "Natural Heritage" },
+  { image: "/images/capebolinao.jpg", title: "Cape Bolinao", location: "Bolinao, Pangasinan", category: "Natural Heritage" },
   { image: "/images/manaoagChurch.jpg", title: "Our Lady of the Rosary of Manaoag", location: "Manaoag, Pangasinan", category: "Religious Heritage" },
   { image: "/images/bolinaoChurch.jpg", title: "Saint James the Great Parish Church", location: "Bolinao, Pangasinan", category: "Religious / Historical Heritage" },
   { image: "/images/lingayenCoCathedral.jpg", title: "Lingayen Co-Cathedral", location: "Lingayen, Pangasinan", category: "Religious / Historical Heritage" },

@@ -2,34 +2,29 @@
   <!--
     FooterLink Component
     -------------------
-    Reusable link for footer or secondary navigation
-    - Accepts `label` (text) and `href` (URL)
-    - Provides hover effect for visual feedback
+    Uses NuxtLink for internal routing
+    - Prevents full page reload
+    - Fixes 404 issue on GitHub Pages
   -->
-  <a :href="href" class="footer-link">{{ label }}</a>
+  <NuxtLink :to="href" class="footer-link">
+    {{ label }}
+  </NuxtLink>
 </template>
 
 <script setup>
 defineProps({
   label: { 
     type: String, 
-    required: true  /* text content of the link */ 
+    required: true 
   },
   href: { 
     type: String, 
-    default: "#"    /* default link if none provided */ 
+    default: "#" 
   }
 });
 </script>
 
 <style scoped>
-/* =========================================
-   FOOTER LINK STYLING
-   -----------------------------------------
-   Provides subtle, readable footer links
-   - Earthy green color for brand consistency
-   - Smooth hover transition for user feedback
-========================================= */
 .footer-link {
   color: #2e4d2e;            
   text-decoration: none;     
@@ -37,7 +32,6 @@ defineProps({
   transition: color 0.2s ease;
 }
 
-/* Hover state */
 .footer-link:hover {
   color: #4caf50;             
 }

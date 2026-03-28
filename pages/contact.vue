@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <HeaderNav />
     <!-- HERO -->
     <section class="hero-contact">
       <div class="hero-content">
@@ -95,6 +95,9 @@ function submitForm() {
   successMessage.value = "Thank you! Your message has been sent."
   form.value = { name: '', email: '', subject: '', message: '' }
 }
+
+import HeaderNav from '~/components/organisms/HeaderNav.vue'
+import Footer from '~/components/organisms/Footer.vue'
 </script>
 
 <style scoped>

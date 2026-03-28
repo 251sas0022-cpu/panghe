@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <HeaderNav />
     <!-- HERO SECTION -->
     <section class="hero-faq">
       <div class="hero-content">
@@ -69,6 +69,8 @@ const faqs = [
             lighthouses, and Balungao for hot spring resorts.`
   },
 ]
+import HeaderNav from '~/components/organisms/HeaderNav.vue'
+import Footer from '~/components/organisms/Footer.vue'
 </script>
 
 <style scoped>

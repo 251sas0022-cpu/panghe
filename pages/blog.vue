@@ -1,6 +1,6 @@
 <template>
   <div>
-
+     <HeaderNav />
     <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-content">
@@ -164,6 +164,11 @@
 
   </div>
 </template>
+
+<script setup>
+import HeaderNav from '~/components/organisms/HeaderNav.vue'
+import Footer from '~/components/organisms/Footer.vue'
+</script>
 
 <style scoped>
 

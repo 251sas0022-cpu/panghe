@@ -3,12 +3,14 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  ssr: true,
+  ssr: false,
 
   nitro: {
     preset: 'github_pages'
   },
-
+  routeRules: {
+    '/**': { prerender: true }
+  },
   app: {
     baseURL: '/panghe/'
   },

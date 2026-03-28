@@ -1,14 +1,4 @@
 <template>
-  <!--
-    HeritageCard Component
-    ----------------------
-    Displays a heritage site card with image, title, location, and a call-to-action button.
-    - Uses BaseImage for consistent image rendering
-    - Uses BaseTypography for text styling
-    - Uses BaseButton for "Explore" button
-    - Clicking the button navigates to the heritage detail page using Vue Router
-    - Supports responsive row layout via container queries
-  -->
   <article class="card">
     <div class="image-wrapper">
       <BaseImage :src="image" :alt="title" class="image" loading="lazy"/>
@@ -17,9 +7,16 @@
     <div class="content">
       <BaseTypography tag="h3" class="title">{{ title }}</BaseTypography>
       <BaseTypography class="location">{{ location }}</BaseTypography>
-      <BaseButton class="cta" @click="goToHeritage">
-        Explore
-      </BaseButton>
+
+      <NuxtLink
+        :to="{ path: '/heritage', query: { q: title } }"
+        class="cta"
+      >
+        <BaseButton>
+          Explore
+        </BaseButton>
+      </NuxtLink>
+
     </div>
   </article>
 </template>
